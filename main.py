@@ -32,12 +32,13 @@ def win_position(f, user):
     for n in range(3):
         if check_pos(f[n][0], f[n][1], f[n][2], user) or \
                 check_pos(f[0][n], f[1][n], f[2][n], user) or \
-                check_pos(f[0][0], f[1][1], f[2][2], user):
+                check_pos(f[0][0], f[1][1], f[2][2], user) or \
+                check_pos(f[2][0], f[1][1], f[0][2], user):
             return True
     return False
 
 
-def start(field):
+def start():
     count = 0
     while True:
         show_field(field)
@@ -59,4 +60,4 @@ def start(field):
 
 
 field = [['-'] * 3 for i in range(3)]
-start(field)
+start()
